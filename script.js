@@ -35,30 +35,77 @@ do{
 
 
 
-function random(rand){
-    for(let i = 1; i <= rand; i++){
-        let sum1 = Math.floor(Math.random() * 100);
-        let sum2 = Math.floor(Math.random() * 100);
-        const operations = {
-            '+':(a,b)=>a+b,
-            '-':(a,b)=>a-b,
-            '*':(a,b)=>a*b,
-            '/':(a,b)=>a/b,
 
-        };
-        const operator = Object.keys(operations);
-        const op = operator[Math.floor(Math.random() * operator.length)]
-        let exsample = prompt(sum1+" "+op+" " +sum2+" = " );
-        let answer = operations[op](sum1,sum2);
-        console.log(answer);
+
+
+
+function rand(ran){
+    let i = 0;
+    for(;i < ran; i++){
+    let sum1 = Math.floor(Math.random() * 10 + 1);
+    let sum2 = Math.floor(Math.random() * 10 + 1);
+    let operator = ['+','-','*','/'];
+    let op = operator[Math.floor(Math.random() * operator.length)];
+    let answer = prompt("Решите "+sum1+" "+op+" "+sum2);
+    function pozitive(a,b){
+        let sum = a+b;
+        if(sum==answer){
+            console.log("Верно "+answer);
+            
+        }else {
+            console.log("не верно правильный ответ: "+sum);
+            
+        }
         
-       (exsample == answer)?console.log("ваш ответ верный - "+exsample):console.log("Ваш ответ не верный - "+exsample+" Правильный ответ - "+answer);
-       
-       
+        
+
+    }
+    function negative(a,b){
+        let sum = a-b;
+        if(sum==answer){
+            console.log("Верно "+answer);
+            
+        }else {
+            console.log("не верно правильный ответ: "+sum);
+            
+        }
+    }
+    function multiplying(a,b){
+        let sum = a*b;
+        if(sum==answer){
+            console.log("Верно "+answer);
+            
+        }else {
+            console.log("не верно правильный ответ: "+sum);
+            
+        }
+     }
+    function dividing(a,b){
+        let sum = a/b;
+        if(sum==answer){
+            console.log("Верно "+answer);
+            
+        }else {
+            console.log("не верно правильный ответ: "+sum);
+            
+        }
+     }
+    if(op=="+"){pozitive(sum1,sum2); 
+    }
+    else if(op=="-"){negative(sum1,sum2);
+    }
+    else if(op=="*"){multiplying(sum1,sum2);
+    }
+    else if(op=="/"){dividing(sum1,sum2);
+    }
+    
     }
 
+
+
 }
-        random(ran);
+    
+rand(ran);
 
 
 
