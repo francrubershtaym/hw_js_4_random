@@ -29,9 +29,9 @@ userData(name, year, bir);
 
 
 let ran;
-do{
+do {
     ran = +prompt("Введите количество рандомных примеров")
-}while(isNaN(ran) || ran < 1);
+} while (isNaN(ran) || ran < 1);
 
 
 
@@ -39,73 +39,46 @@ do{
 
 
 
-function rand(ran){
+function rand(ran) {
     let i = 0;
-    for(;i < ran; i++){
-    let sum1 = Math.floor(Math.random() * 10 + 1);
-    let sum2 = Math.floor(Math.random() * 10 + 1);
-    let operator = ['+','-','*','/'];
-    let op = operator[Math.floor(Math.random() * operator.length)];
-    let answer = prompt("Решите "+sum1+" "+op+" "+sum2);
-    function pozitive(a,b){
-        let sum = a+b;
-        if(sum==answer){
-            console.log("Верно "+answer);
-            
-        }else {
-            console.log("не верно правильный ответ: "+sum);
-            
-        }
-        
-        
-
-    }
-    function negative(a,b){
-        let sum = a-b;
-        if(sum==answer){
-            console.log("Верно "+answer);
-            
-        }else {
-            console.log("не верно правильный ответ: "+sum);
-            
-        }
-    }
-    function multiplying(a,b){
-        let sum = a*b;
-        if(sum==answer){
-            console.log("Верно "+answer);
-            
-        }else {
-            console.log("не верно правильный ответ: "+sum);
-            
-        }
-     }
-    function dividing(a,b){
-        let sum = a/b;
-        if(sum==answer){
-            console.log("Верно "+answer);
-            
-        }else {
-            console.log("не верно правильный ответ: "+sum);
-            
-        }
-     }
-    if(op=="+"){pozitive(sum1,sum2); 
-    }
-    else if(op=="-"){negative(sum1,sum2);
-    }
-    else if(op=="*"){multiplying(sum1,sum2);
-    }
-    else if(op=="/"){dividing(sum1,sum2);
-    }
-    
-    }
+    for (; i < ran; i++) {
+        let sum1 = Math.floor(Math.random() * 10 + 1);
+        let sum2 = Math.floor(Math.random() * 10 + 1);
+        let operator = ['+', '-', '*', '/'];
+        let op = operator[Math.floor(Math.random() * operator.length)];
+        let answer = prompt("Решите " + sum1 + " " + op + " " + sum2);
+        if (op == '+') {
+            let sum = sum1 + sum2;
+            (sum == answer) ? console.log("Правильно!") : console.log("Не правильно " + answer + " правильный ответ " + sum);
 
 
 
+        } else
+            if (op == '-') {
+                let sum = sum1 - sum2;
+                (sum == answer) ? console.log("Правильно!") : console.log("Не правильно " + answer + " правильный ответ " + sum);
+
+
+            } else
+                if (op == '*') {
+                    let sum = sum1 * sum2;
+                    (sum == answer) ? console.log("Правильно!") : console.log("Не правильно " + answer + " правильный ответ " + sum);
+
+
+                } else
+                    if (op == '/') {
+                        let sum = sum1 / sum2;
+                        (sum == answer) ? console.log("Правильно!") : console.log("Не правильно " + answer + " правильный ответ " + sum);
+
+
+                    }
+
+
+
+    }
 }
-    
-rand(ran);
+
+    rand(ran);
 
 
 
